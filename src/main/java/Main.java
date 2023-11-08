@@ -1,7 +1,6 @@
 import models.Author;
 import models.Book;
 import services.AuthorService;
-import utils.HibernateSessionFactoryUtil;
 
 import java.sql.SQLException;
 
@@ -18,5 +17,10 @@ public class Main {
             requiem.setAuthor(author);
             author.addBook(requiem);
             authorService.updateAuthor(author);
+
+            for (int i =0; i< author.getBooks().size(); i++){
+                System.out.println(author.getBooks().get(i));
+            }
+            System.out.println(lirycs.getAuthor());
         }
 }
